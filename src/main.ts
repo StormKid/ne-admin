@@ -5,10 +5,12 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice(AppModule, {
     transport: Transport.TCP,
     options: {
+       host : '127.0.0.1',
        port : 80,
+       retryAttempts : 10,
+       retryDelay : 5000,
     },
   });
-  app.listen(() => { console.log('listen');
-  });
+  app.listen(() =>  console.log('listen'));
 }
 bootstrap();
