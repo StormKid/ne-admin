@@ -9,12 +9,12 @@ export interface User extends Document {
     readonly userFlag: string;
 }
 
-export class User{
+export class UserToData{
     readonly name: string;
     readonly age: number;
     readonly birth: string;
     readonly phone: string;
     readonly userName: string;
     readonly password: string;
-    readonly userFlag: string;
+    readonly userFlag?: string;
 }
